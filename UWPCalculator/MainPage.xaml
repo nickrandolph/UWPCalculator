@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="UWPCalculator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Black">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Result" Grid.ColumnSpan="4" Text="0" TextAlignment="Right" Foreground="White" VerticalAlignment="Center"/>
+        <Button Content="7" Grid.Column="0" Grid.Row="1" Click="NumberClick" />
+        <Button Content="8" Grid.Column="1" Grid.Row="1" Click="NumberClick"/>
+        <Button Content="9" Grid.Column="2" Grid.Row="1" Click="NumberClick"/>
+        <Button Content="/" Grid.Column="3" Grid.Row="1" Background="Orange"  Click="{x:Bind Operations['/']}"/>
+        <Button Content="4" Grid.Column="0" Grid.Row="2" Click="NumberClick"/>
+        <Button Content="5" Grid.Column="1" Grid.Row="2" Click="NumberClick"/>
+        <Button Content="6" Grid.Column="2" Grid.Row="2" Click="NumberClick"/>
+        <Button Content="X" Grid.Column="3" Grid.Row="2" Background="Orange"   Click="{x:Bind Operations['x']}"/>
+        <Button Content="1" Grid.Column="0" Grid.Row="3" Click="NumberClick"/>
+        <Button Content="2" Grid.Column="1" Grid.Row="3" Click="NumberClick"/>
+        <Button Content="3" Grid.Column="2" Grid.Row="3" Click="NumberClick"/>
+        <Button Content="-" Grid.Column="3" Grid.Row="3" Background="Orange"   Click="{x:Bind Operations['-']}"/>
+        <Button Content="0" Grid.ColumnSpan="3" Grid.Row="4" Click="NumberClick"/>
+        <Button Content="+" Grid.Column="3" Grid.Row="4" Background="Orange"  Click="{x:Bind Operations['+']}"/>
+        <Button Content="C" Grid.Column="0" Grid.Row="5" Background="LightGray"  Click="{x:Bind Operations['c']}"/>
+        <Button Content="=" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5" Background="Orange" Click="{x:Bind Operations['=']}"/>
+    </Grid>
+</Page>
